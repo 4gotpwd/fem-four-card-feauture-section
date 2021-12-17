@@ -43,10 +43,6 @@ body {
   margin-right: 2rem;
 }
 
-.container > * {
-  /* outline: 1px solid red; */
-}
-
 .heading {
   text-align: center;
 }
