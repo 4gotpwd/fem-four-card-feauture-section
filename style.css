@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+
+  --neutral-very-dark-blue: hsl(234, 12%, 34%);
+  --neutral-grayish-blue: hsl(229, 6%, 66%);
+  --neutral-very-light-gray: hsl(0, 0%, 98%);
+
+  --fs: 15px;
+  --ff: "Poppins", sans-serif;
+  --ff-fw-extra-light: 200;
+  --ff-fw-regular: 400;
+  --ff-fw-semi-bold: 600;
+
+  --outline: 1px none red;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: 15px;
+  background-color: var(--neutral-very-light-gray);
+}
+
+.container {
+  outline: var(--outline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.container > * {
+  /* outline: 1px solid red; */
+}
+
+.heading {
+  text-align: center;
+}
+
+.main-title {
+  font-weight: var(--ff-fw-extra-light);
+}
+
+.sub-title,
+.role {
+  color: var(--neutral-very-dark-blue);
+}
+
+.title-description {
+  color: var(--neutral-grayish-blue);
+  margin-top: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0px 5px 10px var(--neutral-grayish-blue);
+  /* padding-top: 1.25rem;
+  padding-left: 1.25rem; */
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 311px;
+}
+
+.img-container {
+  /* outline: 1px solid red; */
+  padding-top: 2.25rem;
+  text-align: right;
+}
+
+.img-container > img {
+  height: 3.125rem;
+}
+
+.card:nth-child(1) {
+  border: 0.2em solid transparent;
+  border-top-color: var(--primary-cyan);
+}
+.card:nth-child(2) {
+  border: 0.2em solid transparent;
+  border-top-color: var(--primary-red);
+}
+.card:nth-child(3) {
+  border: 0.2em solid transparent;
+  border-top-color: var(--primary-orange);
+}
+.card:nth-child(4) {
+  border: 0.2em solid transparent;
+  border-top-color: var(--primary-blue);
+}
+
+.role-definition {
+  color: var(--neutral-grayish-blue);
+  font-weight: var(--ff-fw-regular);
+  font-size: 0.75rem;
+  margin-right: 1.25rem;
+}
