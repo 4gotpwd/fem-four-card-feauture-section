@@ -12,8 +12,8 @@
   --primary-orange: hsl(34, 97%, 64%);
   --primary-blue: hsl(212, 86%, 64%);
 
-  --neutral-very-dark-blue: hsl(234, 12%, 34%);
-  --neutral-grayish-blue: hsl(229, 6%, 66%);
+  --neutral-very-dark-blue: rgb(76, 78, 97);
+  --neutral-grayish-blue: #a3a5ae;
   --neutral-very-light-gray: hsl(0, 0%, 98%);
 
   --fs: 15px;
@@ -22,7 +22,9 @@
   --ff-fw-regular: 400;
   --ff-fw-semi-bold: 600;
 
-  --outline: 1px none red;
+  --outline: 1px solid red;
+
+  --card-border: 0.2em solid transparent;
 }
 
 body {
@@ -32,15 +34,13 @@ body {
 }
 
 .container {
-  outline: var(--outline);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
+  margin: 5rem auto;
   gap: 4rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  max-width: 311px;
 }
 
 .heading {
@@ -70,17 +70,14 @@ body {
 .card {
   border-radius: 6px;
   background-color: white;
-  box-shadow: 0px 5px 10px var(--neutral-grayish-blue);
-  /* padding-top: 1.25rem;
-  padding-left: 1.25rem; */
+  box-shadow: 0 5px 15px var(--neutral-grayish-blue);
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  max-width: 311px;
+  gap: 0.35rem;
 }
 
 .img-container {
-  /* outline: 1px solid red; */
   padding-top: 2.25rem;
   text-align: right;
 }
@@ -90,19 +87,19 @@ body {
 }
 
 .card:nth-child(1) {
-  border: 0.2em solid transparent;
+  border: var(--card-border);
   border-top-color: var(--primary-cyan);
 }
 .card:nth-child(2) {
-  border: 0.2em solid transparent;
+  border: var(--card-border);
   border-top-color: var(--primary-red);
 }
 .card:nth-child(3) {
-  border: 0.2em solid transparent;
+  border: var(--card-border);
   border-top-color: var(--primary-orange);
 }
 .card:nth-child(4) {
-  border: 0.2em solid transparent;
+  border: var(--card-border);
   border-top-color: var(--primary-blue);
 }
 
@@ -110,5 +107,47 @@ body {
   color: var(--neutral-grayish-blue);
   font-weight: var(--ff-fw-regular);
   font-size: 0.75rem;
-  margin-right: 1.25rem;
+  margin-right: 1.75rem;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 75rem) {
+  .container {
+    min-height: 100vh;
+    margin: auto;
+    width: 32rem;
+    max-width: 90rem;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 311px);
+    grid-template-rows: repeat(4, calc(200px / 2));
+    gap: 1.5rem;
+  }
+
+  .card:nth-child(1) {
+    grid-row: 2;
+    grid-row-end: span 2;
+  }
+
+  .card:nth-child(2) {
+    grid-row: span 2;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 3;
+    grid-row-end: span 2;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+    grid-row-end: span 2;
+  }
+
+  .role-definition {
+    margin-right: 1.65rem;
+  }
 }
